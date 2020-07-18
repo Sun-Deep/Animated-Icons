@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="bm" data-file="clipboard">
+            
+        </div>
+    </div>
+
+
+    <script src="js/lottie.min.js"></script>
+
+    <script>
+        var bm = document.getElementsByClassName('bm')
+        
+        var anim = bodymovin.loadAnimation({
+            container: bm[0],
+            path: 'icons/clipboard.json',
+            renderer: 'canvas',
+            loop: false,
+            autoplay: false
+        })
+
+        bm[0].addEventListener('mouseenter', () => {
+            anim.setDirection(1)
+            anim.play()
+        })
+
+        bm[0].addEventListener('mouseleave', () => {
+            anim.setDirection(-1)
+            anim.play()
+        })
+    </script>
+</body>
+</html>
